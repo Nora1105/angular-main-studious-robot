@@ -1,0 +1,37 @@
+.gradient-signup{
+    background: #6a11cb;
+      
+      /* Chrome 10-25, Safari 5.1-6 */
+      /* background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1)); */
+      
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to right, rgb(81, 203, 231), rgb(190, 216, 224))
+  }
+  
+  .eyeIcon2{
+    display: inline;
+    position:absolute;
+    padding-right: 8px;
+  }
+  
+  .name-error{
+    color:red;
+    display: block;
+  }
+  .img-fluid{
+    border-radius: 10px;
+    /* border: 2px solid lightgray; */
+  }
+  .design1{
+    border: 2px solid rgba(240, 233, 233, 0.818);
+    border-radius: 10px;
+  }
+  
+  
+  .inp-pass{
+    border: none;
+  }
+  
+  .inp-pass:focus{
+    border: none;
+  }

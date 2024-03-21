@@ -1,0 +1,17 @@
+<p-toast></p-toast>
+<p-confirmPopup>
+    <ng-template pTemplate="content" let-message>
+        <div class="flex flex-column align-items-center w-full gap-3 border-bottom-1 surface-border p-3 mb-3">
+            <i [class]="message.icon" class="text-6xl text-primary-500"></i>
+            <p>{{ message.message }}</p>
+        </div>
+    </ng-template>
+</p-confirmPopup>
+<div class="text-center">
+    <p-button (click)="confirm($event)" icon="pi pi-check" label="Current Location" class="mt-5"></p-button>
+    <div id="map" class="me-5 ms-5 mt-3" [style.display]="disabled"></div>
+</div>
+<p-dialog header="Location" [(visible)]="visible" [style]="{width: '50vw'}">
+    <p>Longtitude : {{locationlongitude}}</p>
+    <p>Latitude : {{locationlatitude}}</p>
+</p-dialog>

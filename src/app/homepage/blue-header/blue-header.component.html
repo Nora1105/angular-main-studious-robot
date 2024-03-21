@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<nav class="navbar navbar-expand-lg text-black align-items-center justify-content-center ps-5">
+  <div class="container-fluid justify-content-center text-center">
+    <div class="d-flex align-items-center justify-content-center collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav text-center">
+
+        <li class="nav-item col-1 me-5">
+          <a class="nav-link navbar-brand text-center" aria-current="page" routerLink="/homepage/hello/home">Hi!!!!</a>
+        </li>
+
+        <li class="nav-item col-1 me-5">
+          <a class="nav-link" aria-current="page" routerLink="/homepage/hello/home">Home</a>
+        </li>
+        <li class="nav-item dropdown col-2 me-5">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-auto-close="outside"
+            data-bs-toggle="dropdown" aria-expanded="false">HTML & CSS</a>
+          <ul class="dropdown-menu text-black">
+            <li><a class="dropdown-item" href="#">Web Design</a></li>
+            <li><a class="dropdown-item" href="#">Login Form</a></li>
+            <li><a class="dropdown-item" href="#">Card Design</a></li>
+            <li><a class="dropdown-item" routerLink="country">Country, State, City</a></li>
+
+            <li class="dropend"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">More</a>
+              <ul class="dropdown-menu text-black">
+                <li><a href="#" class="dropdown-item">Neuromorphism</a></li>
+                <li><a href="#" class="dropdown-item">Pre-loader</a></li>
+                <li><a href="#" class="dropdown-item">Classmorphism</a></li>
+                <li><a href="#" class="dropdown-item" routerLink="stepper">Stepper Form</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown col-2 me-5">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">JAVASCRIPT</a>
+          <ul class="dropdown-menu text-black">
+            <li><a class="dropdown-item" href="#">First</a></li>
+            <li><a class="dropdown-item" href="#">Second</a></li>
+            <li><a class="dropdown-item" href="#">Third</a></li>
+          </ul>
+        </li>
+        <li class="nav-item col-5 me-5">
+          <a class="nav-link sameline" routerLink="/homepage/table">CONTACT US</a>
+        </li>
+        <li class="nav-item col-5 me-5">
+          <a class="nav-link sameline" href="#">ABOUT US</a>
+        </li>
+        <li class="nav-item col-3 me-5">
+          <a class="dropbtn nav-link" role="button" (click)="dispContent()">
+            <i class="fa fa-fw fa-search"></i>
+          </a>
+        </li>
+        <li class="nav-item dropdown col-1 me-5">
+          <a class="dropbtn nav-link navbar-user" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img class="navbar-user-logo"
+              src="https://imgs.search.brave.com/EUXDaA5JkBchSWkVHhkWSPihcXVc_fA_lEFzge7pyZA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzg5LzU5LzU1/LzM2MF9GXzI4OTU5/NTU3M193Q0tPMW54/eHg3SEdrNjl6NXN6/anZTT3FQblpWVGZU/Ry5qcGc"
+              width="30px" height="30px">
+          </a>
+          <ul class="dropdown-menu profile-drop">
+            <li><a class="dropdown-item" routerLink="profile">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Change Password</a></li>
+
+            <li><a class="dropdown-item" routerLink="location">Location</a></li>
+
+            <li><a class="dropdown-item" routerLink="maplocation">Map Location</a></li>
+
+            <li><a class="dropdown-item" routerLink="poplocation">PopLocation</a></li>
+
+
+            <li><a class="dropdown-item" routerLink="table">table</a></li>
+            <li><a class="dropdown-item" routerLink="footer">footer</a></li>
+
+
+            <li *ngxPermissionsOnly="'DEVELOPER'"><a class="dropdown-item" routerLink="/testing/sandbox">Test-1</a></li>
+            <li><a class="dropdown-item" routerLink="/testing/sandboxtest">Test-2</a></li>
+
+            <li><a class="dropdown-item" routerLink="/login">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<input class="search col-2" type="text" *ngIf="disp" placeholder="Search...">
+<div>
+  <router-outlet></router-outlet>
+</div>

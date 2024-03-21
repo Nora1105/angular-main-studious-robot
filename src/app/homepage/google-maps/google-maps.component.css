@@ -1,0 +1,9 @@
+@import "@tomtom-international/web-sdk-maps";
+
+#map{
+  height:70vh;
+  border: 1px solid black;
+  /* width: 70vw; */
+  /* padding: 10px; */
+  width: auto;
+}

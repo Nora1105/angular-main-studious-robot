@@ -1,0 +1,75 @@
+/* *{
+    margin: 1px;
+}
+.page{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bgimg{
+    z-index: -1;
+    position: relative;
+    width: 100%;
+    height: 97vh;
+    opacity: 0.6;
+}
+input{
+    border-radius: 10px;
+    padding: 6px;
+}
+
+span{
+    color:red;
+    padding: 0px;
+    margin: 0px;
+}
+.content{
+    width: max-content;
+    max-height:max-content;
+    padding: 100px;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 30px;
+    margin: 125px auto;
+    z-index: 1;
+    position: absolute;
+    display: inline;
+}
+.comp{
+    color: rgb(223, 31, 31);
+    display: block;
+}
+.btn:hover{
+    color:black;
+    background-color: greenyellow;
+}
+.btn{
+    margin-top: 15px;
+    padding: 8px 80px;
+    display: flex;
+    align-self: center;
+
+}
+a{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    font-size: 12px;
+    margin: 20px;
+}
+.inputs{
+    margin-top:10px;
+    margin-bottom: 10px;
+} */
+
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1)); */
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgb(81, 203, 231), rgb(190, 216, 224))
+    }

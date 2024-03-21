@@ -1,0 +1,24 @@
+<div class="data text-center row">
+    <h3>Quotes</h3>
+    <div class="col">
+        <table class="text-center ps-2 pe-2 table-responsive table">
+            <tr>
+                <th>User Id</th>
+                <th style="min-width: 5rem;">Id <input type="checkbox" (change)="selectAll()"></th>
+                <th>Title</th>
+                <th>Body</th>
+            </tr>
+            <tr *ngFor="let user of users">
+                <td>{{ user.userId }}</td>
+                <td>{{ user.id }} <input type="checkbox" [checked]="check"> </td>
+                <td>{{ user.title }}</td>
+                <td>{{ user.body }}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="text-center mt-4">
+        <label for="file-up" class="btn btn-outline-primary me-1">Upload</label>
+        <input id="file-up" type="file" style="display: none;" />
+        <button class="btn btn-outline-primary ms-1">Download</button>
+    </div>
+</div>

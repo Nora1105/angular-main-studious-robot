@@ -1,0 +1,74 @@
+.navbar-nav {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar{
+    background: linear-gradient(to right, rgb(48, 198, 232), rgb(117, 189, 211));
+    width: 100%;
+}
+.nav-item {
+  flex: 1;
+  text-align: center;
+  width: max-content;
+  justify-items: center;
+}
+.navbar-brand{
+  font-weight: 900;
+  font-size:xx-large;
+}
+.search{
+  position: relative;
+  left:80vw;
+  border-radius: 10px;
+  border: 10px solid rgb(81,203,231) ;
+}
+.dropdown-menu {
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(to right, rgb(48, 198, 232), rgb(117, 189, 211));
+}
+a:focus{
+  background-color: white;
+  color: black;
+}
+.nav-link{
+ color: white;
+ border-radius: 10px;
+}
+.nav-link:hover{
+  color: black;
+  background-color: white;
+ }
+.dropdown-item{
+  color: white;
+  border-radius: 10px;
+}
+.dropdown-item:hover{
+  background-color: white;
+  color: black;
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
+  color: black;
+  background-color: white;
+}
+li .sameline{
+  width: max-content;
+}
+
+.nav-item .navbar-user:focus{
+  border-radius: 50px;
+}
+.navbar-user-logo{
+  border-radius: 50px;
+}
+.navbar-user{
+  position: relative;
+  align-self: center;
+  max-width: fit-content;
+}
+.profile-drop{
+  width: max-content;
+  text-align: left;
+}

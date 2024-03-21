@@ -1,0 +1,80 @@
+<!-- <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="page">
+        <img src="https://cdn.pixabay.com/photo/2023/10/14/09/20/mountains-8314422_1280.png" alt="bgimg" class="bgimg">
+        <div class="content">
+            <h2>Welcome</h2>
+            <input type="text" class="inputs" placeholder="Enter Username" formControlName="usern" [(ngModel)]="LoginObj.userName">
+            <br>
+            <span *ngIf="usern && usern.invalid && usern.touched">This is required Field</span>
+            <br>
+            <input type="password" class="inputs" placeholder="Enter Password" formControlName="pwd" [(ngModel)]="LoginObj.password">
+            <br>
+            <span *ngIf="pwd && pwd.invalid && pwd.touched">Minimum length of password 8 characters</span>
+            <br>
+            <button [disabled]="loginForm.invalid" class="btn btn-primary">LogIn</button>
+            <div class="sif">
+                <a role="button" routerLink="/signup">Sign Up</a>
+                <a href="#"> Forgot Password</a>
+            </div>
+        </div>
+    </div>
+</form> -->
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-2 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card text-black bg-light" style="border-radius: 1rem;">
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <div class="card-body p-5">
+
+                            <div class="mb-md-5 mt-md-4 pb-2">
+
+                                <h2 class="fw-bold mb-2 text-uppercase text-center">Welcome</h2>
+                                <p class="text-black-50 mb-5 text-center">Please enter your login and password!</p>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label form" for="typeEmailX">Username</label>
+                                    <input type="text" id="typeEmailX" placeholder="Enter Username" class="form-control"
+                                        formControlName="usern" [(ngModel)]="LoginObj.userName" />
+                                    <!-- <div class="text-center"> -->
+                                    <span class="text-danger ps-2" *ngIf="usern && usern.invalid && usern.touched">This
+                                        is
+                                        required Field</span>
+                                    <!-- </div> -->
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="typePasswordX">Password</label>
+                                    <input type="password" id="typePasswordX" placeholder="Enter Password"
+                                        class="form-control" formControlName="pwd" [(ngModel)]="LoginObj.password" />
+                                    <!-- <div class="text-center"> -->
+                                    <span class="text-danger ps-2" *ngIf="pwd && pwd.invalid && pwd.touched">Minimum
+                                        length of password 8
+                                        characters</span>
+                                    <!-- </div> -->
+                                </div>
+
+                                <p class="small mb-4 pb-lg-2 text-center"><a class="text-black-50" href="#!">Forgot
+                                        password?</a>
+                                </p>
+
+                                <p class="cnter text-center">
+                                    <button class="btn btn-primary btn-lg px-5" [disabled]="loginForm.invalid"
+                                        type="submit">Login</button>
+                                </p>
+                            </div>
+
+                            <div>
+                                <p class="mb-0 text-center">Don't have an account? <a role="button" routerLink="/auth/signup"
+                                        class="text-black-50 fw-bold">Sign Up</a>
+                                </p>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

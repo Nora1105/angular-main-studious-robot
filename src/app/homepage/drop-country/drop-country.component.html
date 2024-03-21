@@ -1,0 +1,33 @@
+<h1 class="text-center">Locate Me!</h1>
+<div class="d-flex align-item-center justify-content-center">
+  <div class="card flex justify-content-center mt-3 ms-5 me-5" style="width: 60vw;">
+    <mat-form-field>
+      <mat-label>Select Country</mat-label>
+      <mat-select [(value)]="selectedCountry">
+        <mat-option *ngFor="let count of countries" [value]="count">
+          {{ count.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field *ngIf="selectedCountry">
+      <mat-label>Select State</mat-label>
+      <mat-select [(value)]="selectedState">
+        <mat-option *ngFor="let state of selectedCountry.states" [value]="state">
+          {{ state.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field *ngIf="selectedState">
+      <mat-label>Select City</mat-label>
+      <mat-select [(value)]="selectedCity">
+        <mat-option *ngFor="let city of selectedState.cities" [value]="city">
+          {{ city.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="text-center mt-3">
+  <button (click)="getLocation()" class="text-center btn btn-primary" style="min-width: 10vw;">Locate</button>
+  <div id="map" class="me-5 ms-5 mt-5" style="height: 70vh;"></div>
+</div>

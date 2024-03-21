@@ -1,0 +1,10 @@
+@import "primeicons/primeicons.css";
+.ms-2{
+    text-decoration: none;
+}
+.search-box{
+    border-radius: 10px;
+}
+.card{
+    width: 100%;
+}

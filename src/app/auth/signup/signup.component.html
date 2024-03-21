@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+<!-- <img src="https://cdn.pixabay.com/photo/2023/10/14/09/20/mountains-8314422_1280.png" alt="bgimg" class="bgimg"> -->
+<!-- <div class="content"> -->
+<section class="vh-100 gradient-signup">
+<!-- <section class="vh-100"> -->
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <!-- <div class="col-lg-12 col-xl-11" style="width: 40vw"> -->
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <!-- <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1" style="width: 40vw;"> -->
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                <form class="mx-1 mx-md-4" [formGroup]="registerForm">
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="form3Example1c">Username</label>
+                      <input type="text" id="form3Example1c" class="form-control" formControlName="name"
+                        [(ngModel)]="signObj.userName" />
+                      <span class="name-error" *ngIf="name && name.touched && name.invalid">Enter Username / Only Alphabets</span>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="form3Example3c">Email / Phone Number</label>
+                      <input type="text" id="form3Example3c" class="form-control" formControlName="email" />
+                      <span class="name-error" *ngIf="email && email.touched && email.invalid">Enter Email or Phone Number</span>
+                    </div>
+                  </div>
+
+
+                  <!-- /////////////////////////////////////////////////////--Approach-1--////////////////////////////////////////////////////////////// -->
+                  <!-- <label class="form-label ms-3" for="form3Example4c">Password</label>
+                  <div class="d-flex flex-row align-items-center mb-0">
+                    
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                   
+                    <div class="form-outline design1 d-flex flex-row align-items-center flex-fill mb-0 pe-2">
+                    
+                      <input [type]="cond?'text':'password'" id="form3Example4c" class="form-control inp-pass"
+                        formControlName="password" [(ngModel)]="signObj.password" />
+                      <i [class]="Icon?'bi bi-eye-slash':'bi bi-eye'" class="ms-2" id="togglePassword" role="button"
+                        (click)="showpwd()"></i>
+                  
+                    </div>
+                  
+                  </div>
+                  <span class="name-error ms-3 mb-0" *ngIf="password && password.touched && password.invalid">Enter
+                    password of minimum length 8</span>
+
+                  <label class="form-label ms-3 mt-4" for="form3Example4cd">Repeat Password</label>
+                  <div class="d-flex flex-row align-items-center mb-0">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline design1 d-flex flex-row align-items-center flex-fill mb-0">
+              
+                      <input [type]="rpCond?'text':'password'" id="form3Example4cd" class="form-control inp-pass"
+                        formControlName="rpPassword" />
+                      <i [class]="rpIcon?'bi bi-eye-slash':'bi bi-eye'" class="ms-2 me-2" id="togglePassword"
+                        role="button" (click)="rpShowpwd()"></i>
+                    </div>
+                  </div>
+                  <span class="name-error ms-3 mb-4 mt-0"
+                    *ngIf="rpPassword && rpPassword.touched && rpPassword.invalid">Enter Same Password</span> -->
+
+
+                    <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                  <!-- <div class="col-md-10 col-lg-6 col-xl-7 order-1 order-lg-2">
+
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                      class="img-fluid" alt="Sample image">
+    
+                  </div> -->
+
+                  <!-- /////////////////////////////////////////////////////--Approach-2--////////////////////////////////////////////////////////////// -->
+                  <label class="form-label ms-3" for="form3Example4c">Password</label>
+                  <div class="d-flex flex-row align-items-center mb-0">
+                    
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                   
+                    <div class="form-outline d-flex flex-row align-items-center justify-content-end flex-fill mb-0">
+                    
+                      <input [type]="cond?'text':'password'" id="form3Example4c" class="form-control"
+                        formControlName="password" [(ngModel)]="signObj.password" />
+                      <i [class]="Icon?'bi bi-eye-slash':'bi bi-eye'" class="eyeIcon2" id="togglePassword" role="button"
+                        (click)="showpwd()"></i>
+                  
+                    </div>
+                  
+                  </div>
+                  <span class="name-error ms-3 mb-0" *ngIf="password && password.touched && password.invalid">Enter
+                    password of minimum length 8</span>
+
+                  <label class="form-label ms-3 mt-4" for="form3Example4cd">Repeat your password</label>
+                  <div class="d-flex flex-row align-items-center mb-0">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline d-flex flex-row align-items-center justify-content-end flex-fill mb-0">
+              
+                      <input [type]="rpCond?'text':'password'" id="form3Example4cd" class="form-control"
+                        formControlName="rpPassword" />
+                      <i [class]="rpIcon?'bi bi-eye-slash':'bi bi-eye'" class="eyeIcon2" id="togglePassword"
+                        role="button" (click)="rpShowpwd()"></i>
+                    </div>
+                  </div>
+                  <span class="name-error ms-3 mb-4 mt-0"
+                    *ngIf="rpPassword && rpPassword.touched && rpPassword.invalid">Enter Same Password</span>
+                    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 mt-4">
+                    <button type="button" class="btn btn-primary btn-lg" [disabled]="!registerForm.valid"
+                      (click)="regSubmit()">Register</button>
+                    <!-- <button type="button" class="btn btn-primary btn-lg ms-4" routerLink="/login">Back</button> -->
+                  </div>
+                </form>
+
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                <img
+                  src="https://designstripe-secure.imgix.net/scene-snapshots/4803eefd-e24d-494a-8032-2c981666e8f9/1645155956609/default?auto=format&fit=clip&h=850&mark=%2Fwatermark.png&markfit=max&markalign=middle%2Ccenter&markw=1&markh=1&s=ba4d2802c01489414ce63aa5efaf50fa"
+                  class="img-fluid" alt="Sample image">
+
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                  <img src="https://designstripe-secure.imgix.net/scene-snapshots/3876649b-f166-459d-a045-31fa5de52a83/1663369889709/default?auto=format&h=1080&s=643fb4c197b2314986746b5405c5f7ef"
+                    class="img-fluid" alt="Sample image">
+  
+                </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- </div> -->
