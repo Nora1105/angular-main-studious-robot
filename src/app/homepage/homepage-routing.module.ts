@@ -10,6 +10,7 @@ import { GoogleMapsComponent } from './google-maps/google-maps.component';
 import { PopupMapComponent } from './popup-map/popup-map.component';
 import { StepperFormComponent } from './stepper-form/stepper-form.component';
 import { DropCountryComponent } from './drop-country/drop-country.component';
+import { FormEditorComponent } from './form-editor/form-editor.component';
 
 const routes: Routes = [
   {path:'hello',component:BlueHeaderComponent,
@@ -22,7 +23,8 @@ const routes: Routes = [
     {path:'location',component:CurrentLocationComponent},
     {path:'poplocation',component:PopupMapComponent},
     {path:'stepper',component:StepperFormComponent},
-    {path:'country',component:DropCountryComponent}
+    {path:'country',component:DropCountryComponent},
+    {path:'form-editor', component:FormEditorComponent}
   ]
 }
 ];

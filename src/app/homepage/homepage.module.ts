@@ -34,6 +34,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { DropCountryComponent } from './drop-country/drop-country.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { MatSelectModule } from '@angular/material/select';
+import { FormEditorComponent } from './form-editor/form-editor.component';
 
 
 
@@ -48,7 +49,8 @@ import { MatSelectModule } from '@angular/material/select';
     GoogleMapsComponent,
     PopupMapComponent,
     StepperFormComponent,
-    DropCountryComponent
+    DropCountryComponent,
+    FormEditorComponent
   ],
   imports: [
     CommonModule,
@@ -87,7 +89,9 @@ import { MatSelectModule } from '@angular/material/select';
 
     DropdownModule,
 
-    MatSelectModule
+    MatSelectModule,
+
+    // MatTableModule
   ],
 })
 export class HomepageModule { }
