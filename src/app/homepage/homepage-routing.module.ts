@@ -12,7 +12,6 @@ import { StepperFormComponent } from './stepper-form/stepper-form.component';
 import { DropCountryComponent } from './drop-country/drop-country.component';
 import { FormEditorComponent } from './form-editor/form-editor.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
-
 const routes: Routes = [
   {path:'hello',component:BlueHeaderComponent,
   children: [
@@ -30,7 +29,6 @@ const routes: Routes = [
   ]
 }
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
