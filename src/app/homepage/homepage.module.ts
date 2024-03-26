@@ -36,7 +36,9 @@ import { DropdownModule } from 'primeng/dropdown';
 import { MatSelectModule } from '@angular/material/select';
 import { FormEditorComponent } from './form-editor/form-editor.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
+import { provideNativeDateAdapter } from '@angular/material/core';
 
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -93,7 +95,8 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
 
     MatSelectModule,
 
-    // MatTableModule
+    MatDatepickerModule,
+    // provideNativeDateAdapter
   ],
 })
 export class HomepageModule { }

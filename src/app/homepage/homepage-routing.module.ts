@@ -11,6 +11,7 @@ import { PopupMapComponent } from './popup-map/popup-map.component';
 import { StepperFormComponent } from './stepper-form/stepper-form.component';
 import { DropCountryComponent } from './drop-country/drop-country.component';
 import { FormEditorComponent } from './form-editor/form-editor.component';
+import { DatePickerComponent } from './date-picker/date-picker.component';
 
 const routes: Routes = [
   {path:'hello',component:BlueHeaderComponent,
@@ -24,7 +25,8 @@ const routes: Routes = [
     {path:'poplocation',component:PopupMapComponent},
     {path:'stepper',component:StepperFormComponent},
     {path:'country',component:DropCountryComponent},
-    {path:'form-editor', component:FormEditorComponent}
+    {path:'form-editor', component:FormEditorComponent},
+    {path:'date-picker',component:DatePickerComponent}
   ]
 }
 ];
