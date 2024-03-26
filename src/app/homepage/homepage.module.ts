@@ -35,6 +35,7 @@ import { DropCountryComponent } from './drop-country/drop-country.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { MatSelectModule } from '@angular/material/select';
 import { FormEditorComponent } from './form-editor/form-editor.component';
+import { DatePickerComponent } from './date-picker/date-picker.component';
 
 
 
@@ -50,7 +51,8 @@ import { FormEditorComponent } from './form-editor/form-editor.component';
     PopupMapComponent,
     StepperFormComponent,
     DropCountryComponent,
-    FormEditorComponent
+    FormEditorComponent,
+    DatePickerComponent
   ],
   imports: [
     CommonModule,
