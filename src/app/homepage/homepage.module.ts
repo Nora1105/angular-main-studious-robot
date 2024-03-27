@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { HomepageRoutingModule } from './homepage-routing.module';
 import { BlueHeaderComponent } from './blue-header/blue-header.component';
 import { ClientListComponent } from './client-list/client-list.component';
@@ -26,7 +25,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { CurrentLocationComponent } from './current-location/current-location.component';
 import { GoogleMapsComponent } from './google-maps/google-maps.component';
 import { PopupMapComponent } from './popup-map/popup-map.component';
-
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ToastModule } from 'primeng/toast';
 import { StepperFormComponent } from './stepper-form/stepper-form.component';
@@ -37,10 +35,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormEditorComponent } from './form-editor/form-editor.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { provideNativeDateAdapter } from '@angular/material/core';
-
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
-
 @NgModule({
   declarations: [
     BlueHeaderComponent,
@@ -66,7 +61,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     RxReactiveFormsModule,
     MatTableModule,
     HttpClientModule,
-
     MatFormFieldModule,
     MatInputModule,
     MatPaginatorModule,
@@ -77,26 +71,17 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     TableModule,
     ButtonModule,
     DialogModule,
-
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
-
     ConfirmPopupModule,
     ToastModule,
-
     MatStepperModule,
     FormsModule,
-
     NgxPermissionsModule.forChild(),
-
-
     DropdownModule,
-
     MatSelectModule,
-
     MatDatepickerModule,
-    // provideNativeDateAdapter
   ],
 })
 export class HomepageModule { }
