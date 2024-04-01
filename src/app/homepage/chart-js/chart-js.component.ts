@@ -75,9 +75,13 @@ export class ChartJsComponent {
 
   ngOnInit(): void {
     axios.get('https://datausa.io/api/data?drilldowns=Nation&measures=Population')
-      .then((response: { data: { data: any; }; }) => {
+      .then((response: { data: any; }) => {
         const data = response.data.data;
-        const labels = data.map((item: { [x: string]: any; }) => item["Nation"]);
+
+        // const test = response.data.source.annotations["source_name"]
+        // console.warn(test);
+        
+        const labels = data.map((item: { [x: string]: any; }) => item["Year"]);
         const populations = data.map((item: { [x: string]: any; }) => item["Population"]);
         this.createChart(labels, populations);
       })
@@ -89,7 +93,7 @@ export class ChartJsComponent {
   createChart(labels: string[], populations: number[]): void {
     const ctx = document.getElementById('MyChart') as HTMLCanvasElement;
     const chart = new Chart(ctx, {
-      type: 'pie',
+      type: 'bar',
       data: {
         labels: labels,
         datasets: [{
