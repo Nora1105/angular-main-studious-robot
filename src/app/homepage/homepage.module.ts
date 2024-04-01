@@ -36,6 +36,7 @@ import { FormEditorComponent } from './form-editor/form-editor.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ChartJsComponent } from './chart-js/chart-js.component';
 @NgModule({
   declarations: [
     BlueHeaderComponent,
@@ -49,7 +50,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     StepperFormComponent,
     DropCountryComponent,
     FormEditorComponent,
-    DatePickerComponent
+    DatePickerComponent,
+    ChartJsComponent
   ],
   imports: [
     CommonModule,
