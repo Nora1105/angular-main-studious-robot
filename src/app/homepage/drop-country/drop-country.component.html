@@ -29,5 +29,10 @@
 </div>
 <div class="text-center mt-3">
   <button (click)="getLocation()" class="text-center btn btn-primary" style="min-width: 10vw;">Locate</button>
-  <div id="map" class="me-5 ms-5 mt-5" style="height: 70vh;"></div>
+  <button (click)="reset()" class="text-center btn btn-primary" style="min-width: 10vw;">Reset</button>
+  <!-- <input type="reset" value="Reset"> -->
+
+  <div class="map">
+    <div id="map" class="me-5 ms-5 mt-5" style="height: 70vh;"></div>
+  </div>
 </div>

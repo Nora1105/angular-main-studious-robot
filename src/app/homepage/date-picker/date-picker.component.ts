@@ -12,7 +12,8 @@ export class DatePickerComponent {
   constructor() {
     const currentYear = new Date().getFullYear();
     const currentDate = new Date().getDate()
+    const currentMonth = new Date().getMonth()
     this.minDate = new Date(currentYear - 20, 0, 1);
-    this.maxDate = new Date(currentYear + 0,0,currentDate);    
+    this.maxDate = new Date(currentYear + 0,currentMonth,currentDate);    
   }
 }

@@ -23,6 +23,10 @@ export class DropCountryComponent {
   }
   map: any
   centery: any
+  reset(){
+    const mapImg = document.getElementById("map");
+    // mapImg?.hidden;
+  }
   getLocation(): boolean {
     this.countrycoord = [this.selectedCountry.longitude, this.selectedCountry.latitude]
     this.statecoord = [this.selectedState.longitude, this.selectedState.latitude]
