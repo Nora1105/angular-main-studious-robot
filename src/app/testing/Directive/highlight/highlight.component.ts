@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './highlight.component.css'
 })
 export class HighlightComponent {
-
+  color='';
 }
