@@ -20,11 +20,15 @@ import { DataTablesModule } from 'angular-datatables';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { TableModule } from 'primeng/table';
+import { LighterDirective } from './Directive/lighter.directive';
+import { HighlightComponent } from './Directive/highlight/highlight.component';
 
 @NgModule({
   declarations: [
     SandBoxComponent,
     Sandbox2Component,
+    LighterDirective,
+    HighlightComponent,
   ],
   imports: [
     CommonModule,
