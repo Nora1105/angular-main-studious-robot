@@ -22,6 +22,7 @@ import { DialogModule } from 'primeng/dialog';
 import { TableModule } from 'primeng/table';
 import { LighterDirective } from './Directive/lighter.directive';
 import { HighlightComponent } from './Directive/highlight/highlight.component';
+import { DashtestComponent } from './dashtest/dashtest.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HighlightComponent } from './Directive/highlight/highlight.component';
     Sandbox2Component,
     LighterDirective,
     HighlightComponent,
+    DashtestComponent,
   ],
   imports: [
     CommonModule,

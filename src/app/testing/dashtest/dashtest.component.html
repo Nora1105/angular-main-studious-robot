@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing-Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg d-flex flex-row">
+            <div class="d-flex flex-row justify-content-around align-items-center w-100">
+                <div class="text-center"><a routerLink="/testing/testDash" class="nav-link">Dash Testing</a>
+                    <div class="navbar-nav text-center">
+                        <li class="nav-item text-end">
+                            <a routerLink="/testing/testDash" class="nav-link">Home</a>
+                        </li>
+                        <li class="navbar-nav text-center">
+                            <a routerLink="sandbox" class="nav-link">Test-1</a>
+                        </li>
+                        <li class="navbar-nav text-center">
+                            <a routerLink="sandboxtest" class="nav-link">Test-2</a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="backdropper w-100">
+            <video width="100%" height="100%" loop="true" autoplay="autoplay" class="backdrop w-100">
+                <source src="https://cdn.pixabay.com/video/2023/10/12/184734-873923034_large.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            <h1 class="backword">testing!!</h1>
+        </div>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+</body>
+
+</html>
