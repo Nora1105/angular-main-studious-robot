@@ -24,6 +24,7 @@ import { LighterDirective } from './Directive/lighter.directive';
 import { HighlightComponent } from './Directive/highlight/highlight.component';
 import { DashtestComponent } from './dashtest/dashtest.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { SvgTemplateComponent } from './svg-template/svg-template.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     HighlightComponent,
     DashtestComponent,
     HomepageComponent,
+    SvgTemplateComponent,
   ],
   imports: [
     CommonModule,

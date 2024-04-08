@@ -1,0 +1,8 @@
+rect{
+    width: max(50vw,100vw);
+    height: max(50vh,100vh);
+}
+svg,g{
+    width: 100%;
+    height: 100%;
+}
