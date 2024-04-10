@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 })
 export class ApiRequestsComponent {
   apiResp:any;
-  // getApi ="https://jsonplaceholder.typicode.com/posts"
-  getApi="https://dummyjson.com/posts"
+  getApi ="https://jsonplaceholder.typicode.com/posts"
+  // getApi="https://dummyjson.com/posts"
   constructor(private http:HttpClient){}
 
   getAPI(){
@@ -41,8 +41,11 @@ export class ApiRequestsComponent {
 
   postAPI(){
   // POST API
-  const postTest={title:'Post API'};
-  this.http.post<any>(this.getApi,postTest).subscribe(datag=>{
+  const postId=1;
+  const postTest={
+                  title:'Post API',
+                  body:'hello'};
+  this.http.post<any>(`${this.getApi}`,postTest).subscribe(datag=>{
     this.apiResp=datag
   });
 }
