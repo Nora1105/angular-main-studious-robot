@@ -12,29 +12,43 @@ export class ApiRequestsComponent implements OnInit {
   statusApI:any;
   getApi="https://jsonplaceholder.typicode.com/posts/1"
   constructor(private http:HttpClient){}
-  ngOnInit(): void {
-    //PUT API
-    const body = {title:'Angular Testing PUT API'};
-    this.http.put<any>('https://jsonplaceholder.typicode.com/posts/1',body).subscribe(data=>{
-      this.postId=data.id});
+  ngOnInit(): void {}
 
-    // POST API
-    const postTest={title:'Post API'};
-    this.http.post<any>('https://reqres.in/api/posts',postTest).subscribe(postData=>{
-      this.postId=postData.id
-    });
-
-    // DELETE API
-    this.http.delete('https://jsonplaceholder.typicode.com/posts/1').subscribe(()=>{
-      this.statusApI='Delete Successful !!'
+  putAPI(){
+  //PUT API
+  const body = {title:'Angular Testing PUT API'};
+  this.http.put<any>(this.getApi,body).subscribe(data=>{
+    this.postId=data.id
   });
-
-  // 
-
-     // GET API
-     this.http.get(this.getApi).subscribe(datag => {
-      this.getResp = datag;
-    });
-    console.warn(this.getResp);
   }
+
+  postAPI(){
+  // POST API
+  const postTest={title:'Post API'};
+  this.http.post<any>(this.getApi,postTest).subscribe(postData=>{
+    this.postId=postData.id
+  });
+}
+
+
+delAPI(){
+  // DELETE API
+  this.http.delete(this.getApi).subscribe(()=>{
+    this.statusApI='Delete Successful !!'
+});
+}
+
+// upAPI(){
+// // UPDATE API
+// this.http.patch(this.getApi).subscribe
+// }
+
+getAPI(){
+   // GET API
+   this.http.get(this.getApi).subscribe(datag => {
+    this.getResp = datag;
+  });
+  console.warn(this.getResp);
+}
+
 }
