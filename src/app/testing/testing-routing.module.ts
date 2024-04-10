@@ -6,6 +6,7 @@ import { HighlightComponent } from './Directive/highlight/highlight.component';
 import { DashtestComponent } from './dashtest/dashtest.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SvgTemplateComponent } from './svg-template/svg-template.component';
+import { ApiRequestsComponent } from './api-requests/api-requests.component';
 
 
 
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: 'sandbox', component: SandBoxComponent },
       { path: 'sandboxtest', component: Sandbox2Component },
       { path: 'directivetest', component: HighlightComponent },
+      {path:'api-tests',component:ApiRequestsComponent}
     ]
   }
 ];

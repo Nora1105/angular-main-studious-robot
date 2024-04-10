@@ -25,6 +25,7 @@ import { HighlightComponent } from './Directive/highlight/highlight.component';
 import { DashtestComponent } from './dashtest/dashtest.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SvgTemplateComponent } from './svg-template/svg-template.component';
+import { ApiRequestsComponent } from './api-requests/api-requests.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { SvgTemplateComponent } from './svg-template/svg-template.component';
     DashtestComponent,
     HomepageComponent,
     SvgTemplateComponent,
+    ApiRequestsComponent,
   ],
   imports: [
     CommonModule,
