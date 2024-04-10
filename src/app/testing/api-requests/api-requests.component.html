@@ -18,3 +18,7 @@
 <p>{{getResp.that}}</p>
 <p>{{getResp.title}}</p>
 <p>{{getResp.Body}}</p> -->
+
+<div *ngIf="apiResp">
+    <pre>{{apiResp|json}}</pre>
+</div>
