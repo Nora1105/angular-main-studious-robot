@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit{
 
   regSubmit(){
     console.warn(this.registerForm.value);
-    this.routing.navigate(['/login'])
+    this.routing.navigate(['/auth/login'])
 
 
     this.signUpuser.push(this.signObj);

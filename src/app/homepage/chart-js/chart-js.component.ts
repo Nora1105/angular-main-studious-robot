@@ -90,9 +90,10 @@ export class ChartJsComponent {
       });
   }
  
+  chartdisp:any;
   createChart(labels: string[], populations: number[]): void {
     const ctx = document.getElementById('MyChart') as HTMLCanvasElement;
-    const chart = new Chart(ctx, {
+    this.chartdisp = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: labels,
