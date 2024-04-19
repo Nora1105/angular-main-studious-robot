@@ -8,12 +8,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LocaldbComponent {
   items: any;
+  mid:any;
 
   constructor(private http: HttpClient) {
-    this.getItems();
+    // this.getAPI();
   }
 
-  getItems() {
+  getAPI() {
     this.http.get('http://localhost:3000/users')
       .subscribe(data => {
         this.items = data;
@@ -21,21 +22,26 @@ export class LocaldbComponent {
   }
 
 
-//   getAPI(){
-//     // GET API
-//     this.http.get(this.getApi).subscribe(datag => {
-//      this.apiResp = datag;
-//    });
-//    console.warn(this.apiResp);
-//  }
+  //   getAPI(){
+  //     // GET API
+  //     this.http.get(this.getApi).subscribe(datag => {
+  //      this.apiResp = datag;
+  //    });
+  //    console.warn(this.apiResp);
+  //  }
 
-  putAPI(){
-  //PUT API
-  const updateResp=1;
-  const datay = {title:'Angular Testing PUT API'};
-  this.http.put<any>(`${this.items}/${updateResp}`,datay).subscribe(datag=>{
-    this.items=datag
-  });
+  putAPI() {
+    //PUT API
+    const updateResp = 1;
+    const datay = {
+      "id": 2,
+      "name": "yames Williams",
+      "email": "jameswilly@gmail.com",
+      "number": "08111111111"
+    };
+    this.http.put<any>('http://localhost:3000/users', datay).subscribe(datag => {
+      this.items = datag
+    });
   }
 
   // putAPI() {
@@ -48,23 +54,25 @@ export class LocaldbComponent {
 
 
 
-  postAPI(){
-  // POST API
-  const postId=1;
-  const postTest={
-                  title:'Post API',
-                  body:'hello'};
-  this.http.post<any>(`${this.items}`,postTest).subscribe(datag=>{
-    this.items=datag
-  });
-}
+  postAPI() {
+    // POST API
+    this.mid = Math.random;
+    const postTest = {
+      id: this.mid,
+      title: 'Post API',
+      body: 'hello'
+    };
+    this.http.post<any>(`http://localhost:3000/users`, postTest).subscribe(datag => {
+      this.items = datag
+    });
+  }
 
 
-delAPI(){
-  // DELETE API
-  const delid=1
-  this.http.delete(`${this.items}/${delid}`).subscribe(()=>{
-    this.items='Delete Successful !!'
-});
-}
+  delAPI() {
+    // DELETE API
+    const delid = 1
+    this.http.delete(`http://localhost:3000/users`).subscribe(() => {
+      this.items = 'Delete Successful !!'
+    });
+  }
 }
