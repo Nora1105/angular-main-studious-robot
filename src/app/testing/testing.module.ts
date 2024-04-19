@@ -26,6 +26,7 @@ import { DashtestComponent } from './dashtest/dashtest.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SvgTemplateComponent } from './svg-template/svg-template.component';
 import { ApiRequestsComponent } from './api-requests/api-requests.component';
+import { LocaldbComponent } from './localdb/localdb.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ApiRequestsComponent } from './api-requests/api-requests.component';
     HomepageComponent,
     SvgTemplateComponent,
     ApiRequestsComponent,
+    LocaldbComponent,
   ],
   imports: [
     CommonModule,

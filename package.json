@@ -36,6 +36,7 @@
     "datatables.net": "^1.11.3",
     "datatables.net-bs5": "^1.11.3",
     "jquery": "^3.6.0",
+    "json-server": "^1.0.0-alpha.23",
     "ngx-permissions": "^17.1.0",
     "primeicons": "^6.0.1",
     "primeng": "^17.9.0",
