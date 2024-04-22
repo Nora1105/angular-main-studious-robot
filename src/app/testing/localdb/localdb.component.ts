@@ -21,15 +21,6 @@ export class LocaldbComponent {
       });
   }
 
-
-  //   getAPI(){
-  //     // GET API
-  //     this.http.get(this.getApi).subscribe(datag => {
-  //      this.apiResp = datag;
-  //    });
-  //    console.warn(this.apiResp);
-  //  }
-
   putAPI() {
     //PUT API
     const updateResp = 1;
@@ -44,21 +35,11 @@ export class LocaldbComponent {
     });
   }
 
-  // putAPI() {
-  //   const idToUpdate = 1; // Example ID
-  //   const newData = { title:'hello' };
-  //   this.http.put(`${this.getApi}/${idToUpdate}`, newData).subscribe(response => {
-  //     this.apiResp = response;
-  //   });
-  // }
-
-
-
   postAPI() {
     // POST API
     this.mid = Math.random;
     const postTest = {
-      id: this.mid,
+      // id:,
       title: 'Post API',
       body: 'hello'
     };
