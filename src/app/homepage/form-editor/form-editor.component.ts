@@ -7,16 +7,34 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrl: './form-editor.component.css'
 })
 export class FormEditorComponent {
+  private editstat: boolean = false;
+  private editIndex!: number;
+
   profileForm = new FormGroup({
-    firstName: new FormControl('',Validators.required),
-    lastName: new FormControl('',Validators.required),
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
   });
-  dataSource:any[]=[]
+
+  dataSource: any[] = []
+
   onSubmit() {
-    this.dataSource.push(this.profileForm.value)
+    if (this.editstat) {
+      this.dataSource[this.editIndex] = this.profileForm.value;
+      this.editstat = false;
+    } else {
+      this.dataSource.push(this.profileForm.value);
+    }
     this.profileForm.reset()
   }
-  deleteButton(index:number){
-    this.dataSource.splice(index,1)
+
+  deleteButton(index: number) {
+    this.dataSource.splice(index, 1)
+  }
+
+  editButton(index: number) {
+    this.editstat = true;
+    this.editIndex = index;
+    const { firstName, lastName } = this.dataSource[index];
+    this.profileForm.patchValue({ firstName, lastName });
   }
 }

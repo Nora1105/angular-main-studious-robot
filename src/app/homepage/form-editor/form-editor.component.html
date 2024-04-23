@@ -19,6 +19,7 @@
             <th>Name</th>
             <th>Last Name</th>
             <th>Delete</th>
+            <th>Edit</th>
         </tr>
         <tr *ngFor="let i of dataSource; let j=index">
             <td>{{j+1}}</td>
@@ -26,6 +27,8 @@
             <td>{{i.lastName}}</td>
             <td><button (click)="deleteButton(j)" type="button" class="btn btn-light"
                     style="background-color: red;color: white;">Delete</button></td>
+            <td><button (click)="editButton(j)" type="button" class="btn btn-light"
+                    style="background-color: rgb(160, 160, 21);color: white;">Edit</button></td>
         </tr>
     </table>
 </div>

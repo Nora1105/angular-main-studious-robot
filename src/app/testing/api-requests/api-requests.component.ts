@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Config } from 'datatables.net';
+import { catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-api-requests',
@@ -10,7 +12,41 @@ export class ApiRequestsComponent {
   apiResp:any;
   getApi ="https://jsonplaceholder.typicode.com/posts"
   // getApi="https://dummyjson.com/posts"
+  public statusDescription:string ='';
+  
   constructor(private http:HttpClient){}
+
+
+
+
+
+// error handling
+
+  // private handleError(error: HttpErrorResponse) {
+  //   if (error.status === 0) {
+  //     console.error('An error occurred:', error.error);
+  //   } else {
+  //     console.error(
+  //       `Backend returned code ${error.status}, body was: `, error.error);
+  //   }
+  //   this.statusDescription= `Backend returned code ${error.status}, body was: `, error.error;
+  //   return throwError(() => new Error('Something bad happened; please try again later.'));
+  // }
+
+  // getConfig() {
+  //   this.http.get(this.getApi)
+  //     .pipe(
+  //       catchError(this.handleError)
+  //     )
+  //     .subscribe(datag => {
+  //       this.apiResp = datag;
+  //     });
+  // }
+
+
+
+/////////////////////////////////////////////////////////////////////
+
 
   getAPI(){
     // GET API
@@ -18,6 +54,9 @@ export class ApiRequestsComponent {
      this.apiResp = datag;
    });
    console.warn(this.apiResp);
+   if(!this.apiResp){
+    this.statusDescription="Sorry couldn't process your GET request"
+   }
  }
 
   putAPI(){
@@ -27,6 +66,9 @@ export class ApiRequestsComponent {
   this.http.put<any>(`${this.getApi}/${updateResp}`,datay).subscribe(datag=>{
     this.apiResp=datag
   });
+  if(!this.apiResp){
+    this.statusDescription="Sorry couldn't process your PUT request"
+   }
   }
 
   // putAPI() {
@@ -48,6 +90,9 @@ export class ApiRequestsComponent {
   this.http.post<any>(`${this.getApi}`,postTest).subscribe(datag=>{
     this.apiResp=datag
   });
+  if(!this.apiResp){
+    this.statusDescription="Sorry couldn't process your POST request"
+   }
 }
 
 
@@ -57,6 +102,9 @@ delAPI(){
   this.http.delete(`${this.getApi}/${delid}`).subscribe(()=>{
     this.apiResp='Delete Successful !!'
 });
+if(!this.apiResp){
+  this.statusDescription="Sorry couldn't process your DELETE request"
+ }
 }
 
 // upAPI(){

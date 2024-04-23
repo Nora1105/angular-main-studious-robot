@@ -1,7 +1,19 @@
-<mat-form-field class="example-full-width">
-    <mat-label>Choose a date</mat-label>
-    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker">
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
+<div class="container d-flex flex-row align-items-center justify-content-center h-100">
+    <!-- 1st datepicker -->
+    <mat-form-field class="example-full-width">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [min]="minDateF" [max]="maxDateF" [matDatepicker]="picker1">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1 color="accent"></mat-datepicker>
+    </mat-form-field>
+
+    <!-- 2nd datepicker -->
+    <mat-form-field class="ms-3">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [min]="minDateS" [max]="maxDateS" [matDatepicker]="picker2">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2 color="warn"></mat-datepicker>
+    </mat-form-field>
+</div>
