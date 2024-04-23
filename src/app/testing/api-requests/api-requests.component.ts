@@ -9,18 +9,20 @@ import { catchError, throwError } from 'rxjs';
   styleUrl: './api-requests.component.css'
 })
 export class ApiRequestsComponent {
-  apiResp:any;
-  getApi ="https://jsonplaceholder.typicode.com/posts"
+  apiResp: any;
+  getApi = "https://jsonplaceholder.typicode.com/posts"
   // getApi="https://dummyjson.com/posts"
-  public statusDescription:string ='';
-  
-  constructor(private http:HttpClient){}
+  public statusDescription: string = '';
+
+  constructor(private http: HttpClient) { }
 
 
+  // if(!this.apiResp){
+  //   this.statusDescription="dvsvsnjnkkmsdkm"
+  // }
 
 
-
-// error handling
+  // error handling
 
   // private handleError(error: HttpErrorResponse) {
   //   if (error.status === 0) {
@@ -45,30 +47,30 @@ export class ApiRequestsComponent {
 
 
 
-/////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////////
 
 
-  getAPI(){
+  getAPI() {
     // GET API
     this.http.get(this.getApi).subscribe(datag => {
-     this.apiResp = datag;
-   });
-   console.warn(this.apiResp);
-   if(!this.apiResp){
-    this.statusDescription="Sorry couldn't process your GET request"
-   }
- }
+      this.apiResp = datag;
+    });
+    console.warn(this.apiResp);
+    //  if(!this.apiResp){
+    //   this.statusDescription="Sorry couldn't process your GET request"
+    //  }
+  }
 
-  putAPI(){
-  //PUT API
-  const updateResp=1;
-  const datay = {title:'Angular Testing PUT API'};
-  this.http.put<any>(`${this.getApi}/${updateResp}`,datay).subscribe(datag=>{
-    this.apiResp=datag
-  });
-  if(!this.apiResp){
-    this.statusDescription="Sorry couldn't process your PUT request"
-   }
+  putAPI() {
+    //PUT API
+    const updateResp = 1;
+    const datay = { title: 'Angular Testing PUT API' };
+    this.http.put<any>(`${this.getApi}/${updateResp}`, datay).subscribe(datag => {
+      this.apiResp = datag
+    });
+    if (!this.apiResp) {
+      this.statusDescription = "Sorry couldn't process your PUT request"
+    }
   }
 
   // putAPI() {
@@ -81,34 +83,35 @@ export class ApiRequestsComponent {
 
 
 
-  postAPI(){
-  // POST API
-  const postId=1;
-  const postTest={
-                  title:'Post API',
-                  body:'hello'};
-  this.http.post<any>(`${this.getApi}`,postTest).subscribe(datag=>{
-    this.apiResp=datag
-  });
-  if(!this.apiResp){
-    this.statusDescription="Sorry couldn't process your POST request"
-   }
-}
+  postAPI() {
+    // POST API
+    const postId = 1;
+    const postTest = {
+      title: 'Post API',
+      body: 'hello'
+    };
+    this.http.post<any>(`${this.getApi}`, postTest).subscribe(datag => {
+      this.apiResp = datag
+    });
+    // if(!this.apiResp){
+    //   this.statusDescription="Sorry couldn't process your POST request"
+    //  }
+  }
 
 
-delAPI(){
-  // DELETE API
-  const delid=1
-  this.http.delete(`${this.getApi}/${delid}`).subscribe(()=>{
-    this.apiResp='Delete Successful !!'
-});
-if(!this.apiResp){
-  this.statusDescription="Sorry couldn't process your DELETE request"
- }
-}
+  delAPI() {
+    // DELETE API
+    const delid = 1
+    this.http.delete(`${this.getApi}/${delid}`).subscribe(() => {
+      this.apiResp = 'Delete Successful !!'
+    });
+    // if(!this.apiResp){
+    //   this.statusDescription="Sorry couldn't process your DELETE request"
+    //  }
+  }
 
-// upAPI(){
-// // UPDATE API
-// this.http.patch(this.getApi).subscribe
-// }
+  // upAPI(){
+  // // UPDATE API
+  // this.http.patch(this.getApi).subscribe
+  // }
 }
