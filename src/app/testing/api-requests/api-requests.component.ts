@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class ApiRequestsComponent {
   apiResp: any;
   public apiError:any;
-  getApi = "https://jsonplaceholder.typicode.com/postsi"
+  getApi = "https://jsonplaceholder.typicode.com/posts"
   // getApi="https://dummyjson.com/posts"
   public statusDescription: string = '';
 
