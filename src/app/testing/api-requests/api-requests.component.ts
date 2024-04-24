@@ -9,45 +9,10 @@ import { Component } from '@angular/core';
 export class ApiRequestsComponent {
   apiResp: any;
   public apiError:any;
-  getApi = "https://jsonplaceholder.typicode.com/posts"
-  // getApi="https://dummyjson.com/posts"
+  private getApi = "https://jsonplaceholder.typicode.com/posts"
   public statusDescription: string = '';
 
-  constructor(private http: HttpClient) { }
-
-
-  // if(!this.apiResp){
-  //   this.statusDescription="dvsvsnjnkkmsdkm"
-  // }
-
-
-  // error handling
-
-  // private handleError(error: HttpErrorResponse) {
-  //   if (error.status === 0) {
-  //     console.error('An error occurred:', error.error);
-  //   } else {
-  //     console.error(
-  //       `Backend returned code ${error.status}, body was: `, error.error);
-  //   }
-  //   this.statusDescription= `Backend returned code ${error.status}, body was: `, error.error;
-  //   return throwError(() => new Error('Something bad happened; please try again later.'));
-  // }
-
-  // getConfig() {
-  //   this.http.get(this.getApi)
-  //     .pipe(
-  //       catchError(this.handleError)
-  //     )
-  //     .subscribe(datag => {
-  //       this.apiResp = datag;
-  //     });
-  // }
-
-
-
-  /////////////////////////////////////////////////////////////////////
-
+  constructor(private http: HttpClient) { };
 
   getAPI() {
     // GET API
@@ -61,9 +26,6 @@ export class ApiRequestsComponent {
         console.warn('error!!', error);
       }});
     console.warn(this.apiResp);
-    //  if(!this.apiResp){
-    //   this.statusDescription="Sorry couldn't process your GET request"
-    //  }
   }
 
   putAPI() {
@@ -78,16 +40,6 @@ export class ApiRequestsComponent {
     }
   }
 
-  // putAPI() {
-  //   const idToUpdate = 1; // Example ID
-  //   const newData = { title:'hello' };
-  //   this.http.put(`${this.getApi}/${idToUpdate}`, newData).subscribe(response => {
-  //     this.apiResp = response;
-  //   });
-  // }
-
-
-
   postAPI() {
     // POST API
     const postId = 1;
@@ -98,11 +50,7 @@ export class ApiRequestsComponent {
     this.http.post<any>(`${this.getApi}`, postTest).subscribe(datag => {
       this.apiResp = datag
     });
-    // if(!this.apiResp){
-    //   this.statusDescription="Sorry couldn't process your POST request"
-    //  }
   }
-
 
   delAPI() {
     // DELETE API
@@ -110,13 +58,5 @@ export class ApiRequestsComponent {
     this.http.delete(`${this.getApi}/${delid}`).subscribe(() => {
       this.apiResp = 'Delete Successful !!'
     });
-    // if(!this.apiResp){
-    //   this.statusDescription="Sorry couldn't process your DELETE request"
-    //  }
   }
-
-  // upAPI(){
-  // // UPDATE API
-  // this.http.patch(this.getApi).subscribe
-  // }
 }
