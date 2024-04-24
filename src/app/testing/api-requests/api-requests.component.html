@@ -7,9 +7,12 @@
     <button class="btn btn-danger me-2 text-center" (click)="delAPI()">Delete API</button>
 </div>
 
-<!-- <p class="text-center" *ngIf="!apiResp">{{statusDescription}}</p> -->
+<p class="text-center">{{statusDescription}}</p>
+<!-- <p class="text-center">{{apiError.value}}</p> -->
+<pre>{{apiError|json}}</pre>
 
-<div *ngIf="apiResp;else elseblock">
+<div *ngIf="apiResp">
+<!-- <div *ngIf="apiResp;else elseblock"> -->
     <pre>{{apiResp|json}}</pre>
 </div>
-<ng-template #elseblock>{{statusDescription}}</ng-template>
+<!-- <ng-template #elseblock>{{statusDescription}}</ng-template> -->

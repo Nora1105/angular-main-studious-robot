@@ -1,7 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Config } from 'datatables.net';
-import { catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-api-requests',
@@ -10,7 +8,8 @@ import { catchError, throwError } from 'rxjs';
 })
 export class ApiRequestsComponent {
   apiResp: any;
-  getApi = "https://jsonplaceholder.typicode.com/posts"
+  public apiError:any;
+  getApi = "https://jsonplaceholder.typicode.com/postsi"
   // getApi="https://dummyjson.com/posts"
   public statusDescription: string = '';
 
@@ -52,9 +51,15 @@ export class ApiRequestsComponent {
 
   getAPI() {
     // GET API
-    this.http.get(this.getApi).subscribe(datag => {
+    this.http.get(this.getApi).subscribe({
+      next: datag => {
       this.apiResp = datag;
-    });
+    },
+      error:error=>{
+        this.statusDescription=error.message;
+        this.apiError=error;
+        console.warn('error!!', error);
+      }});
     console.warn(this.apiResp);
     //  if(!this.apiResp){
     //   this.statusDescription="Sorry couldn't process your GET request"
