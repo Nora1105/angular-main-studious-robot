@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import Chart, { scales } from 'chart.js/auto';
 import axios from 'axios'
-import { AspectRatio } from '@material-ui/icons';
 
 @Component({
   selector: 'app-chart-js',
@@ -9,39 +8,92 @@ import { AspectRatio } from '@material-ui/icons';
   styleUrl: './chart-js.component.css'
 })
 export class ChartJsComponent {
+  public chartdisp: any;
+  // configurations
+  private configChart_Bar: any;
+  private configChart_Line: any;
+  private configChart_Pie: any;
+  private configChart_ScatterPlot: any;
+  private configChart_Doughnut: any;
+  private configChart_Radar: any;
+  private configChart_PolarArea: any;
+  private configChart_Bubble: any;
+
+  private ctx: any;
+  private chartData: any;
+  // changeGraph(chartType: any) {
+  //   this.chartdisp.destroy();
+  //   if (chartType === "bar") {
+  //     this.chartdisp = new Chart(this.ctx, this.configChart_Bar);
+  //     this.configChart_Bar.type = chartType;
+  //   }
+  //   if(chartType==="line"){
+  //     this.chartdisp = new Chart(this.ctx, this.configChart_Line);
+  //     this.configChart_Line.type = chartType;
+  //   }
+  //   if(chartType==="pie"){
+  //     this.chartdisp = new Chart(this.ctx, this.configChart_Pie);
+  //     this.configChart_Pie.type = chartType;
+  //   }
+  //   if(chartType==="scatter"){
+  //     this.chartdisp = new Chart(this.ctx, this.configChart_ScatterPlot);
+  //     this.configChart_ScatterPlot.type = chartType;
+  //   }
+  //   if(chartType==="doughnut"){
+  //     this.chartdisp = new Chart(this.ctx, this.configChart_Doughnut);
+  //     this.configChart_Doughnut.type = chartType;
+  //   }
+  //   if(chartType==="radar"){
+  //     this.chartdisp = new Chart(this.ctx, this.configChart_Radar);
+  //     this.configChart_Radar.type = chartType;
+  //   }
+  //   if(chartType==="polarArea"){
+  //     this.chartdisp = new Chart(this.ctx, this.configChart_PolarArea);
+  //     this.configChart_PolarArea.type = chartType;
+  //   }
+  //   if(chartType==="bubble"){
+  //     this.chartdisp = new Chart(this.ctx, this.configChart_Bubble);
+  //     this.configChart_Bubble.type = chartType;
+  //   }
+  // }
   changeGraph(chartType: any) {
     this.chartdisp.destroy();
-    if (chartType === "bar") {
-      this.chartdisp = new Chart(this.ctx, this.configChart_Bar);
-      this.configChart_Bar.type = chartType;
-    }
-    if(chartType==="line"){
-      this.chartdisp = new Chart(this.ctx, this.configChart_Line);
-      this.configChart_Line.type = chartType;
-    }
-    if(chartType==="pie"){
-      this.chartdisp = new Chart(this.ctx, this.configChart_Pie);
-      this.configChart_Pie.type = chartType;
-    }
-    if(chartType==="scatter"){
-      this.chartdisp = new Chart(this.ctx, this.configChart_ScatterPlot);
-      this.configChart_ScatterPlot.type = chartType;
-    }
-    if(chartType==="doughnut"){
-      this.chartdisp = new Chart(this.ctx, this.configChart_Doughnut);
-      this.configChart_Doughnut.type = chartType;
-    }
-    if(chartType==="radar"){
-      this.chartdisp = new Chart(this.ctx, this.configChart_Radar);
-      this.configChart_Radar.type = chartType;
-    }
-    if(chartType==="polarArea"){
-      this.chartdisp = new Chart(this.ctx, this.configChart_PolarArea);
-      this.configChart_PolarArea.type = chartType;
-    }
-    if(chartType==="bubble"){
-      this.chartdisp = new Chart(this.ctx, this.configChart_Bubble);
-      this.configChart_Bubble.type = chartType;
+    switch (chartType) {
+      case "bar":
+        this.chartdisp = new Chart(this.ctx, this.configChart_Bar);
+        this.configChart_Bar.type = chartType;
+        break;
+      case "line":
+        this.chartdisp = new Chart(this.ctx, this.configChart_Line);
+        this.configChart_Line.type = chartType;
+        break;
+      case "pie":
+        this.chartdisp = new Chart(this.ctx, this.configChart_Pie);
+        this.configChart_Pie.type = chartType;
+        break;
+      case "scatter":
+        this.chartdisp = new Chart(this.ctx, this.configChart_ScatterPlot);
+        this.configChart_ScatterPlot.type = chartType;
+        break;
+      case "doughnut":
+        this.chartdisp = new Chart(this.ctx, this.configChart_Doughnut);
+        this.configChart_Doughnut.type = chartType;
+        break;
+      case "radar":
+        this.chartdisp = new Chart(this.ctx, this.configChart_Radar);
+        this.configChart_Radar.type = chartType;
+        break;
+      case "polarArea":
+        this.chartdisp = new Chart(this.ctx, this.configChart_PolarArea);
+        this.configChart_PolarArea.type = chartType;
+        break;
+      case "bubble":
+        this.chartdisp = new Chart(this.ctx, this.configChart_Bubble);
+        this.configChart_Bubble.type = chartType;
+        break;
+      default:
+        this.chartdisp = "Wrong Button clicked!!";
+        break;
     }
   }
 
@@ -61,22 +113,9 @@ export class ChartJsComponent {
       });
   }
 
-  chartdisp: any;
-  // configurations
-  configChart_Bar: any;
-  configChart_Line: any;
-  configChart_Pie: any;
-  configChart_ScatterPlot: any;
-  configChart_Doughnut: any;
-  configChart_Radar: any;
-  configChart_PolarArea: any;
-  configChart_Bubble: any;
-
-  ctx: any;
-  chartData:any;
   createChart(labels: string[], populations: number[]): void {
     this.ctx = document.getElementById('MyChart') as HTMLCanvasElement;
-    this.chartData={
+    this.chartData = {
       labels: labels,
       datasets: [{
         label: 'Population',
@@ -154,47 +193,47 @@ export class ChartJsComponent {
         },
       }
     },
-    this.configChart_Doughnut = {
-      type: 'doughnut',
-      data: this.chartData,
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {},
-      }
-    },
-    this.configChart_Radar = {
-      type: 'radar',
-      data: this.chartData,
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {},
-      }
-    },
-    this.configChart_PolarArea = {
-      type: 'polarArea',
-      data: this.chartData,
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {},
-      }
-    },
-    this.configChart_Bubble = {
-      type: 'bubble',
-      data: this.chartData,
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          y: {
-            beginAtZero: false,
-            beginAt: 3000000
+      this.configChart_Doughnut = {
+        type: 'doughnut',
+        data: this.chartData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {},
+        }
+      },
+      this.configChart_Radar = {
+        type: 'radar',
+        data: this.chartData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {},
+        }
+      },
+      this.configChart_PolarArea = {
+        type: 'polarArea',
+        data: this.chartData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {},
+        }
+      },
+      this.configChart_Bubble = {
+        type: 'bubble',
+        data: this.chartData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: false,
+              beginAt: 3000000
+            },
           },
-        },
+        }
       }
-    }
     this.chartdisp = new Chart(this.ctx, this.configChart_Bar);
   }
 }
