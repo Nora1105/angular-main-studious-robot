@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class ApiRequestsComponent {
   public apiResp: any;
-  public apiError:any;
+  public apiError: any;
   private getApi = "https://jsonplaceholder.typicode.com/posts"
   public statusDescription: string = '';
 
@@ -18,13 +18,14 @@ export class ApiRequestsComponent {
     // GET API
     this.http.get(this.getApi).subscribe({
       next: datag => {
-      this.apiResp = datag;
-    },
-      error:error=>{
-        this.statusDescription=error.message;
-        this.apiError=error;
+        this.apiResp = datag;
+      },
+      error: error => {
+        this.statusDescription = error.message;
+        this.apiError = error;
         console.warn('error!!', error);
-      }});
+      }
+    });
     console.warn(this.apiResp);
   }
 
@@ -32,12 +33,16 @@ export class ApiRequestsComponent {
     //PUT API
     const updateResp = 1;
     const datay = { title: 'Angular Testing PUT API' };
-    this.http.put<any>(`${this.getApi}/${updateResp}`, datay).subscribe(datag => {
-      this.apiResp = datag
+    this.http.put<any>(`${this.getApi}/${updateResp}`, datay).subscribe({
+      next: datag => {
+        this.apiResp = datag;
+      },
+      error: error => {
+        this.statusDescription = error.message;
+        this.apiError = error;
+        console.warn('error!!', error);
+      }
     });
-    if (!this.apiResp) {
-      this.statusDescription = "Sorry couldn't process your PUT request"
-    }
   }
 
   postAPI() {
@@ -47,16 +52,30 @@ export class ApiRequestsComponent {
       title: 'Post API',
       body: 'hello'
     };
-    this.http.post<any>(`${this.getApi}`, postTest).subscribe(datag => {
-      this.apiResp = datag
+    this.http.post<any>(`${this.getApi}`, postTest).subscribe({
+      next: datag => {
+        this.apiResp = datag
+      },
+      error: error => {
+        this.statusDescription = error.message;
+        this.apiError = error;
+        console.warn('error!!', error);
+      }
     });
   }
 
   delAPI() {
     // DELETE API
     const delid = 1
-    this.http.delete(`${this.getApi}/${delid}`).subscribe(() => {
-      this.apiResp = 'Delete Successful !!'
+    this.http.delete(`${this.getApi}/${delid}`).subscribe({
+      next: () => {
+        this.apiResp = 'Delete Successful !!'
+      },
+      error: error => {
+        this.statusDescription = error.message;
+        this.apiError = error;
+        console.warn('error!!', error);
+      }
     });
   }
 }
