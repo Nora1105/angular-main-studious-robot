@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './api-requests.component.css'
 })
 export class ApiRequestsComponent {
-  apiResp: any;
+  public apiResp: any;
   public apiError:any;
   private getApi = "https://jsonplaceholder.typicode.com/posts"
   public statusDescription: string = '';
