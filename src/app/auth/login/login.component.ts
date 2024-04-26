@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit{
 
   onSubmit(){
     console.warn(this.loginForm.value);
-    this.route.navigate(['/homepage/hello/home']);
+    this.route.navigate(['/homepage/hello/home'],{queryParams: {q:"login-success"}});
   }
 
 }
