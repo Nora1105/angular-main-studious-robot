@@ -38,6 +38,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ChartJsComponent } from './chart-js/chart-js.component';
 import { ExportCsvComponent } from './export-csv/export-csv.component';
+import { QueryParamsComponent } from './query-params/query-params.component';
 @NgModule({
   declarations: [
     BlueHeaderComponent,
@@ -53,7 +54,8 @@ import { ExportCsvComponent } from './export-csv/export-csv.component';
     FormEditorComponent,
     DatePickerComponent,
     ChartJsComponent,
-    ExportCsvComponent
+    ExportCsvComponent,
+    QueryParamsComponent
   ],
   imports: [
     CommonModule,

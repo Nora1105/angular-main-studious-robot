@@ -14,6 +14,7 @@ import { FormEditorComponent } from './form-editor/form-editor.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { ChartJsComponent } from './chart-js/chart-js.component';
 import { ExportCsvComponent } from './export-csv/export-csv.component';
+import { QueryParamsComponent } from './query-params/query-params.component';
 const routes: Routes = [
   {path:'hello',component:BlueHeaderComponent,
   children: [
@@ -29,7 +30,8 @@ const routes: Routes = [
     {path:'form-editor', component:FormEditorComponent},
     {path:'date-picker',component:DatePickerComponent},
     {path:'chart',component:ChartJsComponent},
-    {path:'export-file',component:ExportCsvComponent}
+    {path:'export-file',component:ExportCsvComponent},
+    {path:'query-params',component:QueryParamsComponent}
   ]
 }
 ];
