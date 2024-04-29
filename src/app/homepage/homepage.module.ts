@@ -39,6 +39,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ChartJsComponent } from './chart-js/chart-js.component';
 import { ExportCsvComponent } from './export-csv/export-csv.component';
 import { QueryParamsComponent } from './query-params/query-params.component';
+import { QueryPramMergeComponent } from './query-params/query-pram-merge/query-pram-merge.component';
+import { QueryParamsAccessComponent } from './query-params/query-params-access/query-params-access.component';
 @NgModule({
   declarations: [
     BlueHeaderComponent,
@@ -55,7 +57,9 @@ import { QueryParamsComponent } from './query-params/query-params.component';
     DatePickerComponent,
     ChartJsComponent,
     ExportCsvComponent,
-    QueryParamsComponent
+    QueryParamsComponent,
+    QueryPramMergeComponent,
+    QueryParamsAccessComponent
   ],
   imports: [
     CommonModule,

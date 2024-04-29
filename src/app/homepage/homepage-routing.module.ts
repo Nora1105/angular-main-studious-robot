@@ -15,6 +15,8 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
 import { ChartJsComponent } from './chart-js/chart-js.component';
 import { ExportCsvComponent } from './export-csv/export-csv.component';
 import { QueryParamsComponent } from './query-params/query-params.component';
+import { QueryPramMergeComponent } from './query-params/query-pram-merge/query-pram-merge.component';
+import { QueryParamsAccessComponent } from './query-params/query-params-access/query-params-access.component';
 const routes: Routes = [
   {path:'hello',component:BlueHeaderComponent,
   children: [
@@ -31,7 +33,9 @@ const routes: Routes = [
     {path:'date-picker',component:DatePickerComponent},
     {path:'chart',component:ChartJsComponent},
     {path:'export-file',component:ExportCsvComponent},
-    {path:'query-params',component:QueryParamsComponent}
+    {path:'query-params',component:QueryParamsComponent},
+    {path:'query-params-merge', component:QueryPramMergeComponent},
+    {path:'query-params-access', component:QueryParamsAccessComponent}
   ]
 }
 ];
