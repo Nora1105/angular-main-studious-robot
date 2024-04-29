@@ -8,13 +8,13 @@ import { Router } from '@angular/router';
 })
 export class QueryPramMergeComponent {
   constructor(private route: Router) { }
-  queryParamsMerge() {
-    this.route.navigate(['/homepage/hello/query-params-merge'], 
-    { 
-      queryParams: { do: "merge" }, 
-      queryParamsHandling: 'merge'
-     });
-  }
+  // queryParamsMerge() {
+  //   this.route.navigate(['/homepage/hello/query-params-merge'], 
+  //   { 
+  //     queryParams: { do: "merge" }, 
+  //     queryParamsHandling: 'merge'
+  //    });
+  // }
 
   queryParamsPreserve() {
     this.route.navigate(['/homepage/hello/query-params'], 

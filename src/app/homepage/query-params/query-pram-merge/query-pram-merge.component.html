@@ -1,12 +1,20 @@
-<p>query-pram-merge works!</p>
+<!-- <p>query-pram-merge works!</p>
 <div class="text-center">
     <button (click)="queryParamsMerge()" class="btn btn-primary">Query-Merge</button>
+</div> -->
+
+<div class="text-center my-5">
+    <button [routerLink]="['/homepage/hello/query-params-merge']" [queryParams]="{do:'merge'}" queryParamsHandling="merge" class="btn btn-primary">Query-Merge</button>
 </div>
 
-<div class="text-center">
+<div class="text-center my-5">
     <button (click)="queryParamsPreserve()" class="btn btn-primary">Query-Preserve</button>
 </div>
 
 <!-- <div class="text-center">
     <button (click)="queryParamsReturn()" class="btn btn-primary">Query-Home</button>
 </div> -->
+
+<div class="text-center my-5">
+    <button [routerLink]="['/homepage/hello/query-params-access']" [queryParams]="{order:'data-access'}" class="btn btn-primary">Query-Data-Access</button>
+</div>
