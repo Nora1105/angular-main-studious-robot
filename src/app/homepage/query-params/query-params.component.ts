@@ -9,6 +9,6 @@ import { Router } from '@angular/router';
 export class QueryParamsComponent {
   constructor(private route:Router){}
   queryParams(){
-    this.route.navigate(['/homepage/hello/query-params'],{queryParams:{s:"test"}});
+    this.route.navigate(['/homepage/hello/query-params-merge'],{queryParams:{q:"query-params"}});
   }
 }
