@@ -8,6 +8,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SvgTemplateComponent } from './svg-template/svg-template.component';
 import { ApiRequestsComponent } from './api-requests/api-requests.component';
 import { LocaldbComponent } from './localdb/localdb.component';
+import { QueryParamTesterComponent } from './query-param-tester/query-param-tester.component';
 
 
 
@@ -21,7 +22,8 @@ const routes: Routes = [
       { path: 'sandboxtest', component: Sandbox2Component },
       { path: 'directivetest', component: HighlightComponent },
       {path:'api-tests',component:ApiRequestsComponent},
-      {path:'local-api', component:LocaldbComponent}
+      {path:'local-api', component:LocaldbComponent},
+      {path:'query-tester', component:QueryParamTesterComponent}
     ]
   }
 ];

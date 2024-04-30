@@ -27,6 +27,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SvgTemplateComponent } from './svg-template/svg-template.component';
 import { ApiRequestsComponent } from './api-requests/api-requests.component';
 import { LocaldbComponent } from './localdb/localdb.component';
+import { QueryParamTesterComponent } from './query-param-tester/query-param-tester.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { LocaldbComponent } from './localdb/localdb.component';
     SvgTemplateComponent,
     ApiRequestsComponent,
     LocaldbComponent,
+    QueryParamTesterComponent,
   ],
   imports: [
     CommonModule,
