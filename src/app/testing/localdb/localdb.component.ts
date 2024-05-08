@@ -15,7 +15,7 @@ export class LocaldbComponent {
   }
 
   getAPI() {
-    debugger;
+    // debugger;
     this.http.get('http://localhost:3000/users')
       .subscribe(data => {
         this.items = data;
@@ -24,7 +24,7 @@ export class LocaldbComponent {
 
   putAPI() {
     //PUT API
-    debugger;
+    // debugger;
     const updateResp = 1;
     const datay = {
       "id": 2,
@@ -39,7 +39,7 @@ export class LocaldbComponent {
 
   postAPI() {
     // POST API
-    debugger;
+    // debugger;
     this.mid = Math.random;
     const postTest = {
       // id:,
@@ -53,7 +53,7 @@ export class LocaldbComponent {
 
 
   delAPI() {
-    debugger;
+    // debugger;
     // DELETE API
     const delid = 1
     this.http.delete(`http://localhost:3000/users`).subscribe(() => {

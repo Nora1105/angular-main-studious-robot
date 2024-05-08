@@ -28,6 +28,7 @@ import { SvgTemplateComponent } from './svg-template/svg-template.component';
 import { ApiRequestsComponent } from './api-requests/api-requests.component';
 import { LocaldbComponent } from './localdb/localdb.component';
 import { QueryParamTesterComponent } from './query-param-tester/query-param-tester.component';
+import { SoundnodeWebComponent } from './soundnode-web/soundnode-web.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { QueryParamTesterComponent } from './query-param-tester/query-param-test
     ApiRequestsComponent,
     LocaldbComponent,
     QueryParamTesterComponent,
+    SoundnodeWebComponent,
   ],
   imports: [
     CommonModule,

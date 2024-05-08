@@ -9,6 +9,7 @@ import { SvgTemplateComponent } from './svg-template/svg-template.component';
 import { ApiRequestsComponent } from './api-requests/api-requests.component';
 import { LocaldbComponent } from './localdb/localdb.component';
 import { QueryParamTesterComponent } from './query-param-tester/query-param-tester.component';
+import { SoundnodeWebComponent } from './soundnode-web/soundnode-web.component';
 
 
 
@@ -23,7 +24,8 @@ const routes: Routes = [
       { path: 'directivetest', component: HighlightComponent },
       {path:'api-tests',component:ApiRequestsComponent},
       {path:'local-api', component:LocaldbComponent},
-      {path:'query-tester', component:QueryParamTesterComponent}
+      {path:'query-tester', component:QueryParamTesterComponent},
+      {path:'soundnode',component:SoundnodeWebComponent}
     ]
   }
 ];
