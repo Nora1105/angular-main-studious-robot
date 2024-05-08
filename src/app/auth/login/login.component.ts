@@ -52,6 +52,7 @@ export class LoginComponent implements OnInit{
 
 
   onSubmit(){
+    // debugger;
     console.warn(this.loginForm.value);
     this.route.navigate(['/homepage/hello/home'],{queryParams: {q:"login-success"}});
   }

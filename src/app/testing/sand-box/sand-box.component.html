@@ -1,69 +1,68 @@
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-<!-- <button routerLink="/homepage/table">Table</button> -->
-<div class="card">
-  <p-table 
-      #dt1 
-      [value]="products" 
-      [paginator]="true" 
-      [rows]="10" 
-      [showCurrentPageReport]="true"
-      [tableStyle]="{ 'min-width': '50rem' }"
-      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-      [rowsPerPageOptions]="[5, 10, 20]" 
-      [loading]="loading" 
-      dataKey="id"
-      styleClass="p-datatable-striped"
-      [globalFilterFields]="['id', 'employee_name', 'employee_salary', 'employee_age']">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genshin Impact - Teyvat Awaits</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evSX huddledayA2kV8JfQopC5kpEOLQENCvJwVYQfAWJA/AXP1N aRZULcaBPniq0i17qGK836l/AXT9CYAxoaN notxil/PvkLN2zTzH19Orp+JC6tX2Q=" crossorigin="anonymous">
+  <link rel="stylesheet" href="sand-box.component.css"> </head>
+<body>
 
-      <ng-template pTemplate="caption">
-          <div class="d-flex justify-content-end align-items-center">
-              <span class="p-input-icon-left ml-auto">
-                  <input pInputText type="text" class="search-box" (input)="dt1.filterGlobal(($any($event.target).value), 'contains')" placeholder="Search keyword" />
-              </span>
-              <a role="button" pButton class="pi pi-filter-slash p-button-outlined ms-2"
-                  (click)="clear(dt1)"></a>
+  <header class="container-fluid bg-gradient-primary py-3">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="images/genshin_logo.png" alt="Genshin Impact Logo" class="img-fluid" style="max-width: 200px;">
+      </div>
+      <div class="col-md-6 d-flex justify-content-end align-items-center">
+        <a href="#" class="btn btn-light">Start Your Journey</a>
+        <a href="#" class="btn btn-outline-light ms-2">News & Events</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container py-5">
+    <section class="row">
+      <div class="col-md-6">
+        <h1 class="display-4">Explore the World of Teyvat</h1>
+        <p>Embark on an epic adventure in Teyvat, a world teeming with elemental magic, where seven nations vie for dominance.</p>
+        <a href="#" class="btn btn-primary">Learn More</a>
+      </div>
+      <div class="col-md-6">
+        <img src="images/genshin_exploration.jpg" alt="Genshin Impact Exploration" class="img-fluid">
+      </div>
+    </section>
+
+    <section class="row mt-5">
+      <div class="col-md-12 text-center">
+        <h2>Meet the Playable Characters</h2>
+        <p>Uncover the stories and powers of a diverse cast of characters, each with unique combat styles and elemental abilities.</p>
+      </div>
+    </section>
+
+    <section class="row justify-content-center">
+      <div class="col-md-3 mb-3">
+        <div class="card">
+          <img src="images/character1.jpg" class="card-img-top" alt="Character 1">
+          <div class="card-body">
+            <h5 class="card-title">Character 1 Name</h5>
+            <p class="card-text">A brief description of Character 1's element and role.</p>
           </div>
-      </ng-template>
-      <ng-template pTemplate="header">
-      <tr>
-          <th style="min-width:15rem" pSortableColumn="id">
-              <div class="flex align-items-center">
-                  Id <p-sortIcon field="id"></p-sortIcon>
-                  <p-columnFilter type="numeric" field="id" display="menu"></p-columnFilter>
-              </div>
-          </th>
-          <th style="min-width:15rem" pSortableColumn="employee_name">
-              <div class="flex align-items-center">
-                  Employee Name <p-sortIcon field="employee_name"></p-sortIcon>
-                  <p-columnFilter type="text" field="employee_name" display="menu"></p-columnFilter>
-              </div>
-          </th>
-          <th style="min-width:15rem" pSortableColumn="employee_salary">
-              <div class="flex align-items-center">
-                  Employee Salary <p-sortIcon field="employee_salary"></p-sortIcon>
-                  <p-columnFilter type="text" field="employee_salary" display="menu"></p-columnFilter>
-              </div>
-          </th>
-          <th style="min-width:10rem" pSortableColumn="employee_age">
-              <div class="flex align-items-center">
-                  Employee Age <p-sortIcon field="employee_age"></p-sortIcon>
-                  <p-columnFilter type="text" field="employee_age" display="menu"></p-columnFilter>
-              </div>
-          </th>
-          <th style="min-width:5rem">
-        </th> 
-      </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-product>
-          <tr>
-              <td>{{ product.id }}</td>
-              <td>{{ product.employee_name }}</td>
-              <td>{{ product.employee_salary | currency:'INR'}}</td>
-              <td>{{ product.employee_age }}</td>
-              <td>
-                <button type="button" class="btn btn-outline-primary" mat-button (click)="openDialog(product)">More</button>
-                </td>
-          </tr>
-      </ng-template>
-  </p-table>
-</div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="card">
+          <img src="images/character2.jpg" class="card-img-top" alt="Character 2">
+          <div class="card-body">
+            <h5 class="card-title">Character 2 Name</h5>
+            <p class="card-text">A brief description of Character 2's element and role.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="card">
+          <img src="images/character3.jpg" class="card-img-top" alt="Character 3">
+          <div class="card-body">
+            <h5 class="card-title">Character 3 Name</h5>
+            <p class="card-text">A brief description of Character 3's element and role.</p>
+          </div>
+        </div>

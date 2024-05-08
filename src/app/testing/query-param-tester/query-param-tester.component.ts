@@ -17,7 +17,6 @@ export class QueryParamTesterComponent {
         console.warn(this.order);
       })
   }
-
   // Testing new thing
   // order_key:any[]=[];
   // order_values:any[]=[]

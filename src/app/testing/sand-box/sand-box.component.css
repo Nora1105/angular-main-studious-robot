@@ -8,3 +8,39 @@
 .card{
     width: 100%;
 }
+/* General Styles */
+body {
+    font-family: sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .btn-primary {
+    background-color: #607D8B;
+    border-color: #607D8B;
+  }
+  
+  .btn-primary:hover {
+    background-color: #4F636E;
+    border-color: #4F636E;
+  }
+  
+  /* Header Styles */
+  .bg-gradient-primary {
+    background-image: linear-gradient(to right, #4361EE, #7841F3);
+  }
+  
+  /* Main Styles */
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  /* Character Section Styles */
+  .card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
