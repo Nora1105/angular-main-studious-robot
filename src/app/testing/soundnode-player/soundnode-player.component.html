@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid d-flex flex-row justify-content-evenly">
+        <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header text-center">
+                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">SoundNode</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="./home">BillBoard 100</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">BillBoard 200</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <button class="navbar-toggler border-0 justify-self-start" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            <a class="navbar-brand text-light text-center">SoundNode</a>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2 text-light bg-dark border-bottom" type="search" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn btn-outline-none text-light" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>

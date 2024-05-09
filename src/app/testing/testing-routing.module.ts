@@ -10,6 +10,8 @@ import { ApiRequestsComponent } from './api-requests/api-requests.component';
 import { LocaldbComponent } from './localdb/localdb.component';
 import { QueryParamTesterComponent } from './query-param-tester/query-param-tester.component';
 import { SoundnodeWebComponent } from './soundnode-web/soundnode-web.component';
+import { SoundnodePlayerComponent } from './soundnode-player/soundnode-player.component';
+import { HomeComponent } from './soundnode-player/home/home.component';
 
 
 
@@ -25,7 +27,12 @@ const routes: Routes = [
       {path:'api-tests',component:ApiRequestsComponent},
       {path:'local-api', component:LocaldbComponent},
       {path:'query-tester', component:QueryParamTesterComponent},
-      {path:'soundnode',component:SoundnodeWebComponent}
+      {path:'soundnode',component:SoundnodeWebComponent},
+      {path:'soundnode-webapp',component:SoundnodePlayerComponent,
+      children:[
+        {path:'home',component:HomeComponent}
+      ]
+      }
     ]
   }
 ];

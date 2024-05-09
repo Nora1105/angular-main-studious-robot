@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <ul class="billboard" *ngFor="let i of billboardcurrent.chart.entries">
+        <li class="content">
+            <div class="card mb-3 p-3 m-2">
+                <img [src]="i.cover" class="card-img-top" alt="Album Cover">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.title}}</h5>
+                    <p class="card-text">{{i.artist}}</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

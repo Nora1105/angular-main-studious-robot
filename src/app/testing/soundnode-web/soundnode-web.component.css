@@ -5,6 +5,9 @@
     font-display:inherit;
 }
 .nav-link{
+    color:rgb(134, 133, 133);
+}
+.nav-link:hover{
     color:white;
 }
 .soundnode-ui-img{

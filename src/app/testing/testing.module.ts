@@ -29,6 +29,8 @@ import { ApiRequestsComponent } from './api-requests/api-requests.component';
 import { LocaldbComponent } from './localdb/localdb.component';
 import { QueryParamTesterComponent } from './query-param-tester/query-param-tester.component';
 import { SoundnodeWebComponent } from './soundnode-web/soundnode-web.component';
+import { SoundnodePlayerComponent } from './soundnode-player/soundnode-player.component';
+import { HomeComponent } from './soundnode-player/home/home.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { SoundnodeWebComponent } from './soundnode-web/soundnode-web.component';
     LocaldbComponent,
     QueryParamTesterComponent,
     SoundnodeWebComponent,
+    SoundnodePlayerComponent,
+    HomeComponent,
   ],
   imports: [
     CommonModule,

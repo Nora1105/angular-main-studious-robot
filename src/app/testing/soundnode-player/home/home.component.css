@@ -1,0 +1,21 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.container-fluid{
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height:auto;
+    background: linear-gradient(-45deg,rgb(255,125,120),rgb(125,125,255));
+}
+.content{
+    list-style-type: none;
+    flex: auto;
+}
+.card{
+    width: 250px;
+    height:400px;
+    background: linear-gradient(45deg,rgb(237, 178, 175),rgb(160, 160, 209));
+}
